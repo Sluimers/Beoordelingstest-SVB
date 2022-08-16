@@ -35,10 +35,10 @@ De **Verhuur-een-auto API** heeft de volgende _functionele eisen_:
     - CO2-uitstoot
     - Bruto prijs
     - Nettoprijs
-- De verhuurprijs is afhankelijk van de volgende parameters:
+- De verhuurtarief is afhankelijk van de volgende parameters:
     - Kilometerstand, het aantal kilometers op jaarbasis
     - Duur van het contract in maanden
-    - Rentevoet w/begindatum
+    - Rentevoet met begindatum
     - Nettoprijs
 - Verhuurtarief = (( kilometerstand / 12 ) * looptijd ) / Nettoprijs) + (( rentevoet / 100 ) * Nettoprijs) / 12 )
 - Voorbeeld berekening:

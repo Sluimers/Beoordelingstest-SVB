@@ -8,7 +8,7 @@ Microservices are small, autonomous services that work together. Let’s break t
 
 Below you see a generic architecture how you can built and assemble a microservice application.
 
-![](assessment-architectuur.jpg)
+![](Beoordeling-architectuur.jpg)
 
 #### Lease-a-car API
 
