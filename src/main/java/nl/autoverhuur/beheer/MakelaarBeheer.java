@@ -11,7 +11,7 @@ public class MakelaarBeheer extends Singleton {
     this.jdbcTemplate = jdbcTemplate;
   }
 
-  public int OpslaanMakelaar(Makelaar makelaar) {
+  public int opslaanMakelaar(Makelaar makelaar) {
     String zoekopdracht = """
         insert into makelaar values(
         '"+e.geefID()+"',
@@ -27,7 +27,7 @@ public class MakelaarBeheer extends Singleton {
     return jdbcTemplate.update(zoekopdracht);
   }
 
-  public int BewerkMakelaar() {
+  public int bewerkMakelaar() {
     String zoekopdracht = """
         update makelaar set
         naam='"+e.geefNaam()+"',
@@ -42,7 +42,7 @@ public class MakelaarBeheer extends Singleton {
     return jdbcTemplate.update(zoekopdracht);
   }
 
-  public int VerwijderKlant() {
+  public int verwijderKlant() {
     String zoekopdracht = """
         delete from makelaar where
         id='" + e.geefID() + "'

@@ -11,7 +11,7 @@ public class KlantBeheer extends Singleton {
     this.jdbcTemplate = jdbcTemplate;
   }
 
-  public int OpslaanKlant(Klant klant) {
+  public int opslaanKlant(Klant klant) {
     String query = """
         insert into klant values(
         '"+e.geefID()+"',
@@ -27,7 +27,7 @@ public class KlantBeheer extends Singleton {
     return jdbcTemplate.update(query);
   }
 
-  public int BewerkKlant() {
+  public int bewerkKlant() {
     String query = """
         update klant set
         naam='"+e.geefNaam()+"',
@@ -42,7 +42,7 @@ public class KlantBeheer extends Singleton {
     return jdbcTemplate.update(query);
   }
 
-  public int VerwijderKlant() {
+  public int verwijderKlant() {
     String query = """
         delete from klant where
         id='" + e.geefKlantID() + "'

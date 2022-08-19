@@ -7,43 +7,43 @@ class Applicatie << (S,#FF7700) Singleton >>
     
 }
 
-class Medewerkerbeheer << (S,#FF7700) Singleton >>
+class MedewerkerBeheer << (S,#FF7700) Singleton >>
 {   
   .. Instellers ..
-  +void VoegtoeMedewerker()
-  +void WijzigMedewerker()
-  +void VerwijderMedewerker()
+  +void voegtoeMedewerker()
+  +void wijzigMedewerker()
+  +void verwijderMedewerker()
 }
 
-class Klantbeheer << (S,#FF7700) Singleton >>
+class KlantBeheer << (S,#FF7700) Singleton >>
 {   
   .. Instellers ..
-  +void VoegtoeKlant()
-  +void WijzigKlant()
-  +void VerwijderKlant()
+  +void voegtoeKlant()
+  +void wijzigKlant()
+  +void verwijderKlant()
 }
 
-class Autobeheer << (S,#FF7700) Singleton >>
+class AutoBeheer << (S,#FF7700) Singleton >>
 {   
   .. Instellers ..
-  +void VoegtoeAuto()
-  +void WijzigAuto()
-  +void VerwijderAuto()
+  +void voegtoeAuto()
+  +void wijzigAuto()
+  +void verwijderAuto()
 }
 
-class Makelaarbeheer << (S,#FF7700) Singleton >>
+class MakelaarBeheer << (S,#FF7700) Singleton >>
 {   
   .. Instellers ..
-  +void VoegtoeMakelaar()
-  +void WijzigMakelaar()
-  +void VerwijderMakelaar()
+  +void voegtoeMakelaar()
+  +void wijzigMakelaar()
+  +void verwijderMakelaar()
 }
 
 class Persoon {
-  Int id
+  int id
   String naam
   String straat
-  Int huisnummer
+  int huisnummer
   String postcode
   String plaats
   String email
@@ -60,37 +60,47 @@ class Persoon {
 }
 
 class Klant {
-  Int id
+  int id
   + String geefID()
 }
 
 class Makelaar {
-  Int id
+  int id
   + String geefID()
 }  
 
 class Medewerker {
-  Int id
+  int id
   + String geefID()
 }
 
 class AutoSoort {
+  int id
   String merk
   String model
   String versie
-  Int n_deuren
-  Float co2_uitstoot
-  Float prijs_bruto
-  Float prijs_netto
+  int nDeuren
+  float co2Uitstoot
+  float prijsBruto
+  float prijsNetto
+  .. Ophalers ..
+  + int geefID()
+  + String geefMerk()
+  + String geefModel()
+  + String geefVersie()
+  + Float geefCO2Uitstoot()
+  + Float geefPrijsBruto()
+  + Float geefPrijsNetto()
 }
 
 class Auto {
-  Int id
-  Float jaarkilometerstand
-  Int contractduur
-  Float rentevoet
-  Float nettoprijs
-  + Float verhuurTarief()
+  int id
+  float jaarkilometerstand
+  int contractduur
+  float rentevoet
+  float nettoprijs
+  .. Berekeningen ..
+  + Float geefVerhuurTarief()
   .. Ophalers ..
   + int geefID()
   + Float geefJaarkilometerstand()

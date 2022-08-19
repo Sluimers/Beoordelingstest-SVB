@@ -12,45 +12,37 @@ public class AutoSoortBeheer extends Singleton {
     this.jdbcTemplate = jdbcTemplate;
   }
 
-  String merk;
-  String model;
-  String versie;
-  int n_deuren;
-  float co2_uitstoot;
-  float prijs_bruto;
-  float prijs_netto;
-  
-  public int OpslaanAutoSoort(AutoSoort autosoort) {
-    String zoekopdracht ="""
+  public int opslaanAutoSoort(AutoSoort autosoort) {
+    String zoekopdracht = """
         insert into autosoort values(
         '"+e.geefID()+"',
         '"+e.geefMerk()+"',
         '"+e.geefModel()+"',
         '"+e.geefVersie()+"',
-        '"+e.geefN_Deuren()+"',
-        '"+e.geefCO2_Uitstoot()+"',
-        '"+e.geefPrijs_Bruto()+"',
-        '"+e.geefPrijs_Netto()+"'
+        '"+e.geefNDeuren()+"',
+        '"+e.geefCO2Uitstoot()+"',
+        '"+e.geefPrijsBruto()+"',
+        '"+e.geefPrijsNetto()+"'
         )""";
     return jdbcTemplate.update(zoekopdracht);
   }
 
-  public int BewerkAutoSoort() {
-    String zoekopdracht ="""
+  public int bewerkAutoSoort() {
+    String zoekopdracht = """
         update autosoort set
         merk='"+e.geefMerk()+"',
         model='"+e.geefModel()+"',
         versie='"+e.geefVersie()+"',
-        n_deuren='"+e.geefN_Deuren()+"',
-        co2_uitstoot='"+e.geefCO2_Uitstoot()+"',
-        prijs_bruto='"+e.geefPrijs_Bruto()+"',
-        prijs_netto='"+e.geefPrijs_Netto()+"'
+        nDeuren='"+e.geefNDeuren()+"',
+        co2Uitstoot='"+e.geefCO2Uitstoot()+"',
+        prijsBruto='"+e.geefPrijsBruto()+"',
+        prijsNetto='"+e.geefPrijsNetto()+"'
         """;
     return jdbcTemplate.update(zoekopdracht);
   }
 
-  public int VerwijderAutoSoort() {
-    String zoekopdracht ="""
+  public int verwijderAutoSoort() {
+    String zoekopdracht = """
         delete from autosoort where
         id='" + e.geefID() + "'
         """;

@@ -11,7 +11,7 @@ public class MedewerkerBeheer extends Singleton {
     this.jdbcTemplate = jdbcTemplate;
   }
 
-  public int OpslaanMedewerker(Medewerker medewerker) {
+  public int opslaanMedewerker(Medewerker medewerker) {
     String zoekopdracht = """
         insert into medewerker values(
         '"+e.geefID()+"',
@@ -27,7 +27,7 @@ public class MedewerkerBeheer extends Singleton {
     return jdbcTemplate.update(zoekopdracht);
   }
 
-  public int BewerkMedewerker() {
+  public int bewerkMedewerker() {
     String zoekopdracht = """
         update klant set
         naam='"+e.geefNaam()+"',
@@ -42,7 +42,7 @@ public class MedewerkerBeheer extends Singleton {
     return jdbcTemplate.update(zoekopdracht);
   }
 
-  public int VerwijderMedewerker() {
+  public int verwijderMedewerker() {
     String zoekopdracht = """
         delete from medewerker where
         id='" + e.geefID() + "'

@@ -7,47 +7,48 @@ public class Auto {
   float rentevoet;
   float nettoprijs;
   AutoSoort soort;
-  
-  static final int PERCENTAGE=100;  
-  static final int MAANDEN=12;  
 
-  public Auto(AutoSoort autosoort_n, float jaarkilometerstand_n, int contractduur_n, float rentevoet_n, float nettoprijs_n) {
-    soort = autosoort_n;
-    jaarkilometerstand = jaarkilometerstand_n;
-    contractduur = contractduur_n;
-    rentevoet = rentevoet_n;
-    nettoprijs = nettoprijs_n;
+  static final int PERCENTAGE = 100;
+  static final int MAANDEN = 12;
+
+  public Auto(AutoSoort nieuwAutosoort, float nieuwJaarkilometerstand, int nieuwContractduur, float nieuwRentevoet,
+      float nieuwNettoprijs) {
+    soort = nieuwAutosoort;
+    jaarkilometerstand = nieuwJaarkilometerstand;
+    contractduur = nieuwContractduur;
+    rentevoet = nieuwRentevoet;
+    nettoprijs = nieuwNettoprijs;
   }
 
-  public float verhuurTarief() {
+  public float geefVerhuurTarief() {
     return (jaarkilometerstand * contractduur / nettoprijs / MAANDEN) + (rentevoet * nettoprijs / PERCENTAGE / MAANDEN);
   }
-  
+
   public int geefID() {
-	  return id;
+    return id;
   }
-  
+
   public float geefJaarkilometerstand() {
-	  return jaarkilometerstand;
+    return jaarkilometerstand;
   }
-  
+
   public int geefContractduur() {
-	  return contractduur;
+    return contractduur;
   }
-  
+
   public float geefRentevoet() {
-	  return rentevoet;
+    return rentevoet;
   }
-  
+
   public float geefNettoprijs() {
-	  return nettoprijs;
+    return nettoprijs;
   }
-  
+
   public AutoSoort geefSoort() {
-	  return soort;
+    return soort;
   }
-  
+
   public int geefAutoSoortID() {
-	  return soort.geefID();
+    return soort.geefID();
   }
 }

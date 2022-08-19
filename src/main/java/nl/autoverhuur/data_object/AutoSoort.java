@@ -5,40 +5,40 @@ public class AutoSoort {
   String merk;
   String model;
   String versie;
-  int n_deuren;
-  float co2_uitstoot;
-  float prijs_bruto;
-  float prijs_netto;
-  
+  int nDeuren;
+  float co2Uitstoot;
+  float prijsBruto;
+  float prijsNetto;
+
   public int geefID() {
-	    return id;
+    return id;
   }
-  
+
   public String geefMerk() {
-	    return merk;
+    return merk;
   }
 
   public String geefModel() {
-	    return model;
+    return model;
   }
-  
+
   public String geefVersie() {
-	    return versie;
+    return versie;
   }
-  
-  public float geefCo2_Uitstoot() {
-	    return co2_uitstoot;
+
+  public float geefCO2Uitstoot() {
+    return co2Uitstoot;
   }
-  
-  public float geefN_Deuren() {
-	    return n_deuren;
+
+  public float geefNDeuren() {
+    return nDeuren;
   }
-  
+
   public float geefPrijsBruto() {
-	    return prijs_bruto;
+    return prijsBruto;
   }
-  
+
   public float geefPrijsNetto() {
-	    return prijs_netto;
+    return prijsNetto;
   }
 }
