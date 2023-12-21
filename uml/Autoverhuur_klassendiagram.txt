@@ -1,0 +1,129 @@
+@startuml
+
+title Klassendiagram - Autoverhuur
+
+class Applicatie << (S,#FF7700) Singleton >>
+{
+    
+}
+
+class MedewerkerBeheer << (S,#FF7700) Singleton >>
+{   
+  .. Instellers ..
+  +void voegtoeMedewerker()
+  +void wijzigMedewerker()
+  +void verwijderMedewerker()
+}
+
+class KlantBeheer << (S,#FF7700) Singleton >>
+{   
+  .. Instellers ..
+  +void voegtoeKlant()
+  +void wijzigKlant()
+  +void verwijderKlant()
+}
+
+class AutoBeheer << (S,#FF7700) Singleton >>
+{   
+  .. Instellers ..
+  +void voegtoeAuto()
+  +void wijzigAuto()
+  +void verwijderAuto()
+}
+
+class MakelaarBeheer << (S,#FF7700) Singleton >>
+{   
+  .. Instellers ..
+  +void voegtoeMakelaar()
+  +void wijzigMakelaar()
+  +void verwijderMakelaar()
+}
+
+class Persoon {
+  int id
+  String naam
+  String straat
+  int huisnummer
+  String postcode
+  String plaats
+  String email
+  String telefoonnummer
+  .. Ophalers ..
+  + Int geefPersoonID()
+  + String geefNaam()
+  + String geefStraat()
+  + Int geefHuisnummer()
+  + String geefPostcode()
+  + String geefPlaats()
+  + String geefEmail()
+  + String geefTelefoonnummer()
+}
+
+class Klant {
+  int id
+  + String geefID()
+}
+
+class Makelaar {
+  int id
+  + String geefID()
+}  
+
+class Medewerker {
+  int id
+  + String geefID()
+}
+
+class AutoSoort {
+  int id
+  String merk
+  String model
+  String versie
+  int nDeuren
+  float co2Uitstoot
+  float prijsBruto
+  float prijsNetto
+  .. Ophalers ..
+  + int geefID()
+  + String geefMerk()
+  + String geefModel()
+  + String geefVersie()
+  + Float geefCO2Uitstoot()
+  + Float geefPrijsBruto()
+  + Float geefPrijsNetto()
+}
+
+class Auto {
+  int id
+  float jaarkilometerstand
+  int contractduur
+  float rentevoet
+  float nettoprijs
+  .. Berekeningen ..
+  + Float geefVerhuurTarief()
+  .. Ophalers ..
+  + int geefID()
+  + Float geefJaarkilometerstand()
+  + Int geefContractduur()
+  + Float geefRentevoet()
+  + Float geefNettoprijs()
+  + Float geefSoort()
+}
+
+Applicatie "1" -down- "1" Autobeheer: Composition 
+Applicatie "1" -down- "1" Klantbeheer: Composition 
+Applicatie "1" -down- "1" Makelaarbeheer: Composition 
+Applicatie "1" -down- "1" Medewerkerbeheer: Composition 
+
+Auto "1" -down- AutoSoort: Composition 
+
+Autobeheer "1" *-down- "*" Auto: Composition 
+Klantbeheer "1" *-down- "*" Klant: Composition 
+Makelaarbeheer "1" *-down- "*" Makelaar: Composition 
+Medewerkerbeheer "1" *-down- "*" Medewerker: Composition 
+
+Klant <|-down- Persoon: Extension 
+Makelaar <|-down- Persoon: Extension 
+Medewerker <|-down- Persoon: Extension 
+
+@enduml
